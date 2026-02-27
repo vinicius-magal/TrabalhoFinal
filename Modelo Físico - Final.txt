@@ -1,0 +1,47 @@
+--Modelo Físico
+
+--Cria tabela cliente
+CREATE TABLE cliente (
+	nome VARCHAR(100),
+	cpf_cnpj VARCHAR(20) PRIMARY KEY,
+	cidade VARCHAR(60),
+	estado VARCHAR(2),
+	nascimento DATE
+);
+
+CREATE TABLE pedido (
+	id_pedido INTEGER PRIMARY KEY,
+	data_pedido DATE,
+	status_pedido VARCHAR(20),
+	valor_total REAL,
+	cpf_cnpj VARCHAR(20)
+);
+
+CREATE TABLE produto (
+	estoque INTEGER,
+	categoria VARCHAR(50),
+	id_produto INTEGER PRIMARY KEY,
+	preco REAL
+);
+
+CREATE TABLE contem (
+	id_pedido INTEGER,
+	id_produto INTEGER,
+	quantidade INTEGER,
+	PRIMARY KEY (id_pedido, id_produto)
+);
+
+ALTER TABLE pedido
+ADD CONSTRAINT pedido_cliente
+FOREIGN KEY (cpf_cnpj) REFERENCES cliente (cpf_cnpj);
+
+ALTER TABLE contem
+ADD CONSTRAINT contem_produto
+FOREIGN KEY (id_produto) REFERENCES produto(id_produto);
+
+ALTER TABLE contem
+ADD CONSTRAINT contem_pedido
+FOREIGN KEY (id_pedido) REFERENCES pedido(id_pedido);
+
+
+	
