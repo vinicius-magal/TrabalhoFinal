@@ -20,8 +20,7 @@ Modelagem de Dados • ETL (Apache Hop) • Dashboard (Metabase)
 ## 🎯 Objetivo do Projeto
 Este projeto modela um sistema de pedidos, abrangendo análise, modelagem de dados, ETL e criação de dashboard analítico no Metabase.
 
-Os seguintes itens exigidos foram atendidos:
-
+Os itens exigidos foram totalmente atendidos:
 1. GitHub organizado  
 2. Análise  
 3. Modelo Conceitual  
@@ -35,9 +34,9 @@ Os seguintes itens exigidos foram atendidos:
 
 ## 📘 Análise  
 📄 **Arquivo:**  
-👉 [Análise – Projeto Final – PRO725](./docs/Análise%20-%20Projeto%20Final%20-%20PRO725.docx)
+👉 [Análise – Projeto Final – PRO725](./An%C3%A1lise%20-%20Projeto%20Final%20-%20PRO725.docx)
 
-Conteúdo:  
+Conteúdo:
 - Descrição do problema  
 - Escopo do sistema  
 - Entidades relevantes  
@@ -47,7 +46,7 @@ Conteúdo:
 
 ## 🧩 Modelo Conceitual  
 📄 **Arquivo:**  
-👉 [Modelo Conceitual (brModelo)](./database/modelo_conceitual/ModeloConceitualFinal.brM3)
+👉 [Modelo Conceitual (brModelo)](./ModeloConceitualFinal.brM3)
 
 Inclui:  
 - Entidades  
@@ -58,58 +57,56 @@ Inclui:
 
 ## 🗂️ Modelo Lógico  
 📄 **Arquivo:**  
-👉 [Modelo Lógico (brModelo)](./database/modelo_logico/ModeloLogicoFinal.brM3)
+👉 [Modelo Lógico (brModelo)](./ModeloLogicoFinal.brM3)
 
-Inclui:  
+Inclui:
 - Tabelas  
 - Atributos e domínios  
-- Chaves primárias e estrangeiras  
+- PK e FK  
 
 ---
 
 ## 🏗️ Modelo Físico  
 📄 **Arquivo:**  
-👉 [Modelo Físico – Script SQL](./database/modelo_fisico/Modelo%20Físico%20-%20Final.txt)
+👉 [Modelo Físico – Script SQL](./Modelo%20F%C3%ADsico%20-%20Final.txt)
 
-Inclui:  
+Inclui:
 - Estrutura final do banco  
-- PKs e FKs  
+- Chaves primárias e estrangeiras  
 - Tipos de dados  
 
 ---
 
 ## ⚙️ ETL – Carga de Dados  
-📄 **Pasta:**  
-👉 [ETL – Apache Hop](./etl)
+📄 **Pipelines Apache Hop:**
 
-Pipelines principais:  
-- [cliente_corrigido_etl.hpl](./etl/cliente_corrigido_etl.hpl)  
-- [produto_corrigido_etl.hpl](./etl/produto_corrigido_etl.hpl)  
-- [pedido_corrigido_etl.hpl](./etl/pedido_corrigido_etl.hpl)  
-- [contem_corrigido_etl.hpl](./etl/contem_corrigido_etl.hpl)  
+- [cliente_corrigido_etl.hpl](./cliente_corrigido_etl.hpl)  
+- [produto_corrigido_etl.hpl](./produto_corrigido_etl.hpl)  
+- [pedido_corrigido_etl.hpl](./pedido_corrigido_etl.hpl)  
+- [contem_corrigido_etl.hpl](./contem_corrigido_etl.hpl)
 
-Processos executados:  
-- Leitura dos CSVs  
-- Correção de inconsistências  
-- Carga no banco  
+Processos realizados:
+- Leitura dos CSV  
+- Conferência e padronização de dados  
+- Carga no banco de dados  
 
 ---
 
 ## 🔄 ETL – Transformação  
 Executado nos mesmos arquivos `.hpl`.
 
-Inclui:  
-- Padronização de dados  
+Inclui:
+- Padronização  
 - Conversão de tipos  
-- Preparação para análises no Metabase  
+- Preparação para o dashboard  
 
 ---
 
 ## 📊 Dashboard – Metabase  
 📄 **Arquivo:**  
-👉 [Dashboard – Análise de Pedidos e Clientes](./dashboard/Metabase%20-%20Dashboard%20–%20Análise%20de%20Pedidos%20e%20Clientes.pdf)
+👉 [Dashboard – Análise de Pedidos e Clientes](./Metabase%20-%20Dashboard%20–%20An%C3%A1lise%20de%20Pedidos%20e%20Clientes.pdf)
 
-Indicadores exibidos:  
+Indicadores apresentados:
 - Total de clientes  
 - Total de pedidos  
 - Ticket médio  
@@ -124,19 +121,19 @@ Indicadores exibidos:
 
 ### 🔧 1. Banco de Dados
 1. Criar banco PostgreSQL  
-2. Executar o script SQL em:  
-   👉 `/database/modelo_fisico/Modelo Físico - Final.txt`
+2. Executar o script SQL:  
+   👉 `Modelo Físico - Final.txt`
 
 ### 🔄 2. ETL – Apache Hop
 1. Abrir Apache Hop  
-2. Carregar arquivos da pasta `/etl`  
-3. Ajustar caminhos dos CSV em `/dados`  
+2. Importar arquivos `.hpl`  
+3. Ajustar caminhos dos CSVs correspondentes  
 4. Executar os pipelines  
 
 ### 📈 3. Dashboard – Metabase
-1. Conectar Metabase ao banco  
-2. Criar perguntas e métricas  
-3. Reproduzir o dashboard  
+1. Conectar o Metabase ao banco configurado  
+2. Criar perguntas simples ou SQL  
+3. Reproduzir o dashboard conforme o arquivo PDF  
 
 ---
 
